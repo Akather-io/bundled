@@ -1,13 +1,10 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { Bars3Icon, BellIcon } from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 
-import { Fragment, PropsWithChildren, useState } from "react";
-import { Menu, Transition } from "@headlessui/react";
+import { PropsWithChildren, useState } from "react";
 import Sidebar from "@/components/SideBar";
-import { NAVIGATION } from "@/utils/menu.util";
-import clsx from "clsx";
+import SolanaButton from "./SolanaButton";
 
 const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -31,7 +28,7 @@ const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
 
           <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6 justify-end">
             <div className="flex items-center gap-x-4 lg:gap-x-6">
-              {/* Profile dropdown */}
+              <SolanaButton />
             </div>
           </div>
         </div>
