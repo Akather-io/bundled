@@ -17,3 +17,9 @@ export const NAVIGATION = [
     icon: PuzzlePieceIcon,
   },
 ];
+
+
+export const TOOLS_MENU = [
+  { id: 1, name: 'Provider', href: '/provider', initial: 'P', current: false },
+  { id: 2, name: 'Followers', href: '/followers', initial: 'F', current: false },
+]
