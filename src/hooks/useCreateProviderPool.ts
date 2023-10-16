@@ -1,3 +1,4 @@
+import * as anchor from "@coral-xyz/anchor";
 import { PoolProviderType } from "@/types/PoolProvider.type"
 import { useProgram } from "./useProgram"
 import { findProviderPoolAccount, findStrategiesAccount, findUsdcTokenAccount } from "@/utils/program.utils";
