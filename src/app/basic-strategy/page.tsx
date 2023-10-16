@@ -1,9 +1,11 @@
-import StrategyFilter from "@/components/StategyFilter";
+// import StrategyFilter from "@/components/StategyFilter";
+import StrategyList from "@/components/strategy/StrategyList";
 
 const BasicStrategyPage = () => {
   return (
     <main>
-      <StrategyFilter />
+      {/* <StrategyFilter /> */}
+      <StrategyList />
     </main>
   );
 };
