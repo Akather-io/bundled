@@ -1,7 +1,6 @@
 "use client";
 import Button from "@/components/Button";
 import Container from "@/components/Container";
-import JudgmentGroup from "@/components/JudgmentGroup";
 import Step1 from "@/components/provider/Step-1";
 import Step2 from "@/components/provider/Step-2";
 import { useState } from "react";
@@ -18,6 +17,16 @@ export type ProviderFormValues = {
   sharing: number;
   weighted: number;
   currency: string;
+
+  shortCallPrice: number;
+  longCallPrice: number;
+  shortPutPrice: number;
+  longPutPrice: number;
+
+  shortCallPortion: number;
+  longCallPortion: number;
+  shortPutPortion: number;
+  longPutPortion: number;
 };
 
 const ProviderPage = () => {
@@ -68,7 +77,7 @@ const ProviderPage = () => {
           {step === 2 && <Step2 />}
           <div className="text-center space-x-4">
             {step === 2 && (
-              <Button type="button" className="text-black bg-gray-100" onClick={back}>
+              <Button type="button" className="!text-black !bg-gray-100" onClick={back}>
                 Previous
               </Button>
             )}
