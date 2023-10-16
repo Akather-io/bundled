@@ -66,18 +66,22 @@ const Step2 = () => {
                     type="text"
                     className="flex-1 w-12 h-14 text-center border-0 bg-transparent py-2.5 pl-2 text-white focus:ring-0 sm:text-sm sm:leading-6 !text-xl"
                     placeholder="Type subscription fee"
-                    {...register("subscriptionFee")}
+                    {...register("longCallPrice")}
                   />
                 </div>
               </td>
-              <td />
+              <td rowSpan={4} className="relative w-[220px]">
+                <div className="bg-[#655BFF] absolute inset-x-10 px-4 text-center inset-y-4 rounded-lg flex items-center justify-center">
+                  API from Binance, Deribit
+                </div>
+              </td>
               <td>
                 <div className="flex rounded-md bg-white/5 ring-1 ring-inset ring-white/10 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
                   <input
                     type="text"
                     className="flex-1 w-12 h-14 text-center border-0 bg-transparent py-2.5 pl-2 text-white focus:ring-0 sm:text-sm sm:leading-6 !text-xl"
                     placeholder="Type subscription fee"
-                    {...register("subscriptionFee")}
+                    {...register("longCallPortion")}
                   />
                 </div>
               </td>
@@ -90,18 +94,17 @@ const Step2 = () => {
                     type="text"
                     className="flex-1 w-12 h-14 text-center border-0 bg-transparent py-2.5 pl-2 text-white focus:ring-0 sm:text-sm sm:leading-6 !text-xl"
                     placeholder="Type subscription fee"
-                    {...register("subscriptionFee")}
+                    {...register("shortCallPrice")}
                   />
                 </div>
               </td>
-              <td />
               <td>
                 <div className="flex rounded-md bg-white/5 ring-1 ring-inset ring-white/10 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
                   <input
                     type="text"
                     className="flex-1 w-12 h-14 text-center border-0 bg-transparent py-2.5 pl-2 text-white focus:ring-0 sm:text-sm sm:leading-6 !text-xl"
                     placeholder="Type subscription fee"
-                    {...register("subscriptionFee")}
+                    {...register("shortCallPortion")}
                   />
                 </div>
               </td>
@@ -114,18 +117,17 @@ const Step2 = () => {
                     type="text"
                     className="flex-1 w-12 h-14 text-center border-0 bg-transparent py-2.5 pl-2 text-white focus:ring-0 sm:text-sm sm:leading-6 !text-xl"
                     placeholder="Type subscription fee"
-                    {...register("subscriptionFee")}
+                    {...register("longPutPrice")}
                   />
                 </div>
               </td>
-              <td />
               <td>
                 <div className="flex rounded-md bg-white/5 ring-1 ring-inset ring-white/10 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
                   <input
                     type="text"
                     className="flex-1 w-12 h-14 text-center border-0 bg-transparent py-2.5 pl-2 text-white focus:ring-0 sm:text-sm sm:leading-6 !text-xl"
                     placeholder="Type subscription fee"
-                    {...register("subscriptionFee")}
+                    {...register("longPutPortion")}
                   />
                 </div>
               </td>
@@ -138,18 +140,17 @@ const Step2 = () => {
                     type="text"
                     className="flex-1 w-12 h-14 text-center border-0 bg-transparent py-2.5 pl-2 text-white focus:ring-0 sm:text-sm sm:leading-6 !text-xl"
                     placeholder="Type subscription fee"
-                    {...register("subscriptionFee")}
+                    {...register("shortPutPrice")}
                   />
                 </div>
               </td>
-              <td />
               <td>
                 <div className="flex rounded-md bg-white/5 ring-1 ring-inset ring-white/10 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500">
                   <input
                     type="text"
                     className="flex-1 w-12 h-14 text-center border-0 bg-transparent py-2.5 pl-2 text-white focus:ring-0 sm:text-sm sm:leading-6 !text-xl"
                     placeholder="Type subscription fee"
-                    {...register("subscriptionFee")}
+                    {...register("shortPutPortion")}
                   />
                 </div>
               </td>
