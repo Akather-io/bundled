@@ -56,7 +56,7 @@ export const useProgram = () => {
     const [program, setProgram] = useState<anchor.Program<BundledProgram>>();
     const anchorWallet = useAnchorWallet();
     const { connection } = useConnection();
-    const programID = process.env.NEXT_PUBLIC_RENEC_PROGRAM_ID!;
+    const programID = process.env.NEXT_PUBLIC_PROGRAM_ID!;
 
     const updateProgram = useCallback(() => {
         if (!connection) return;

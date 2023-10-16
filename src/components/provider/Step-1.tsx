@@ -7,7 +7,10 @@ const Step1 = () => {
   return (
     <div className="space-y-3">
       <div>
-        <label htmlFor="general-information" className="block text-xl font-bold text-white">
+        <label
+          htmlFor="general-information"
+          className="block text-xl font-bold text-white"
+        >
           General Information
         </label>
         <div className="mt-2">
@@ -23,7 +26,6 @@ const Step1 = () => {
         <div className="mt-2">
           <textarea
             id="desc"
-            disabled
             rows={3}
             className="block disabled:cursor-not-allowed !text-xl w-full rounded-md border-0 bg-white/5 py-2.5 pl-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
             defaultValue={""}
@@ -33,7 +35,10 @@ const Step1 = () => {
         </div>
       </div>
       <div className="md:w-2/6">
-        <label htmlFor="expiration" className="block text-xl font-bold text-white">
+        <label
+          htmlFor="expiration"
+          className="block text-xl font-bold text-white"
+        >
           Choose your product Expiration
         </label>
         <div className="mt-2">
@@ -49,7 +54,10 @@ const Step1 = () => {
         </div>
       </div>
       <div className="space-y-3 py-5">
-        <label htmlFor="general-information" className="block text-xl font-bold text-white mb-5">
+        <label
+          htmlFor="general-information"
+          className="block text-xl font-bold text-white mb-5"
+        >
           Self judgment
         </label>
         <JudgmentGroup name="probability" />
@@ -57,7 +65,10 @@ const Step1 = () => {
         <JudgmentGroup name="cost" />
       </div>
       <div className="space-y-3 py-5">
-        <label htmlFor="general-information" className="block text-xl font-bold text-white mb-5">
+        <label
+          htmlFor="general-information"
+          className="block text-xl font-bold text-white mb-5"
+        >
           Subscription fee:
         </label>
         <div className="flex items-center">

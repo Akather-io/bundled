@@ -3,8 +3,12 @@ import Button from "@/components/Button";
 import Container from "@/components/Container";
 import Step1 from "@/components/provider/Step-1";
 import Step2 from "@/components/provider/Step-2";
+import useCreateProviderPool from "@/hooks/useCreateProviderPool";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
+import dayjs from "dayjs";
+import { PoolProviderType } from "@/types/PoolProvider.type";
+import { BN } from "bn.js";
 
 export type ProviderFormValues = {
   name: string;
@@ -31,6 +35,7 @@ export type ProviderFormValues = {
 
 const ProviderPage = () => {
   const [step, setStep] = useState<1 | 2>(1);
+  const { mutate } = useCreateProviderPool();
   const methods = useForm<ProviderFormValues>({
     defaultValues: {
       name: "",
@@ -58,7 +63,37 @@ const ProviderPage = () => {
       setStep(2);
       return;
     }
-    console.log(data);
+    const payload = {
+      expired_at: new BN(dayjs(data.expiration).unix()),
+      fee: new BN(data.subscriptionFee),
+      share: new BN(data.sharing),
+      j_probability: data.probability,
+      j_return: data.return,
+      j_cost: data.cost,
+      strategies: [
+        {
+          tokenSymbol: data.currency,
+          weight: data.weighted,
+          longCall: {
+            strikePrice: new BN(data.longCallPrice),
+            portion: data.longCallPortion,
+          },
+          shortCall: {
+            strikePrice: new BN(data.shortCallPrice),
+            portion: data.shortCallPortion,
+          },
+          longPut: {
+            strikePrice: new BN(data.longPutPrice),
+            portion: data.longPutPortion,
+          },
+          shortPut: {
+            strikePrice: new BN(data.shortPutPrice),
+            portion: data.shortPutPortion,
+          },
+        },
+      ],
+    } as PoolProviderType;
+    mutate(payload);
   };
 
   const buttonTitle = step === 1 ? "Next" : "Confirm";
@@ -77,7 +112,11 @@ const ProviderPage = () => {
           {step === 2 && <Step2 />}
           <div className="text-center space-x-4">
             {step === 2 && (
-              <Button type="button" className="!text-black !bg-gray-100" onClick={back}>
+              <Button
+                type="button"
+                className="!text-black !bg-gray-100"
+                onClick={back}
+              >
                 Previous
               </Button>
             )}
