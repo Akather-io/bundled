@@ -3,7 +3,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { Cog6ToothIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { NAVIGATION } from "@/utils/menu.util";
+import { NAVIGATION, TOOLS_MENU } from "@/utils/menu.util";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -104,6 +104,31 @@ const Sidebar: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
                           ))}
                         </ul>
                       </li>
+                      <li>
+                        <div className="text-xs font-semibold leading-6 text-gray-400">
+                          Customized strategy
+                        </div>
+                        <ul role="list" className="-mx-2 mt-2 space-y-1">
+                          {TOOLS_MENU.map((item) => (
+                            <li key={item.name}>
+                              <a
+                                href={item.href}
+                                className={clsx(
+                                  item.href === pathName
+                                    ? "bg-gray-800 text-white"
+                                    : "text-gray-400 hover:text-white hover:bg-gray-800",
+                                  "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                )}
+                              >
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">
+                                  {item.initial}
+                                </span>
+                                <span className="truncate">{item.name}</span>
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
                       <li className="mt-auto">
                         <a
                           href="#"
@@ -161,8 +186,33 @@ const Sidebar: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
                   ))}
                 </ul>
               </li>
+              <li>
+                <div className="text-xs font-semibold leading-6 text-indigo-200">
+                  Customized strategy
+                </div>
+                <ul role="list" className="-mx-2 mt-2 space-y-1">
+                  {TOOLS_MENU.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className={clsx(
+                          item.href === pathName
+                            ? "bg-gray-800 text-white"
+                            : "text-gray-400 hover:text-white hover:bg-gray-800",
+                          "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                        )}
+                      >
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">
+                          {item.initial}
+                        </span>
+                        <span className="truncate">{item.name}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
 
-              <li className="mt-auto">
+              {/* <li className="mt-auto">
                 <a
                   href="#"
                   className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
@@ -173,7 +223,7 @@ const Sidebar: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }) => {
                   />
                   Settings
                 </a>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>
